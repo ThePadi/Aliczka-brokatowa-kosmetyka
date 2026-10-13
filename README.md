@@ -1,5 +1,6 @@
-# Aliczka Brokatowa Kosmetyka
+# Alina Ivanets Nails Academy
 
-Strona salonu Aliczka Brokatowa Kosmetyka (Gdańsk Osowa) z zakładką kursów Alina Ivanets Nails Academy.
+Landing kursów stylizacji paznokci Aliny Ivanets (Gdańsk Osowa): `index.html`.
+Poprzednia strona salonu z cennikiem usług: `salon.html`.
 
-Jeden plik `index.html` plus zdjęcia w `img/`. Hostowane na GitHub Pages z gałęzi `gh-pages`.
+Jeden plik HTML plus zdjęcia w `img/`. Hostowane na GitHub Pages z gałęzi `gh-pages`.
