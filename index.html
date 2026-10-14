@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Parisienne&family=Jost:wght@300;400;500&display=swap">
 <style>
-/* Layout: course funnel. Typographic hero with Zoom CTA > all 4 courses (no prices, consult on Zoom) > "is this you" > program > 7 mistakes > how to sign up (Zoom, IG, FB, phone) > FAQ > about Alina (only photo) + reviews > sticky bar */
+/* Layout: course funnel. Typographic hero with Zoom CTA > all 4 courses (no prices, consult on Zoom) > "is this you" > program > materials > how to sign up (Zoom, IG, FB, phone) > FAQ > about Alina (only photo) + reviews > sticky bar */
 :root{
   --espresso:#211510;
   --choco:#33231c;
@@ -141,26 +141,15 @@ header{position:absolute;inset:0 0 auto 0;z-index:30;padding-top:env(safe-area-i
 
 /* program */
 .mat{background:linear-gradient(180deg,var(--paper),var(--cream));overflow-x:clip}
-.mat-in{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(36px,6vw,80px);align-items:center}
+.mat-in{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,6vw,80px);align-items:start}
+.mat-in .mat-list{margin-top:8px}
 @media (max-width:900px){.mat-in{grid-template-columns:1fr}}
-.mat-stack{position:relative;width:100%;max-width:470px;aspect-ratio:1/1.08;margin-inline:auto}
-.mat-stack button{all:unset;box-sizing:border-box;cursor:pointer;position:absolute;left:13%;top:7%;width:74%;aspect-ratio:1;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 34px 60px -22px rgba(33,21,16,.55),0 0 0 6px #fff;transition:transform .7s var(--ease),filter .4s}
-.mat-stack img{display:block;width:100%;height:100%;object-fit:cover}
-.mat-stack button[data-pos="0"]{z-index:3;transform:rotate(-2deg)}
-.mat-stack button[data-pos="1"]{z-index:2;transform:translate(-15%,6%) rotate(-10deg);filter:brightness(.97)}
-.mat-stack button[data-pos="2"]{z-index:1;transform:translate(15%,2%) rotate(9deg);filter:brightness(.94)}
-@media (hover:hover){.mat-stack:hover button[data-pos="1"]{transform:translate(-22%,8%) rotate(-14deg)}.mat-stack:hover button[data-pos="2"]{transform:translate(22%,3%) rotate(13deg)}.mat-stack:hover button[data-pos="0"]{transform:rotate(0) translateY(-6px)}}
-.mat-stack button:focus-visible{outline:2px solid var(--gold);outline-offset:8px}
-.mat-tag{position:absolute;left:50%;bottom:0;transform:translateX(-50%);white-space:nowrap;font:400 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--mocha)}
 .mat-list{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:20px 24px}
 @media (max-width:560px){.mat-list{grid-template-columns:1fr}}
 .mat-list li{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start}
 .mat-list svg{width:42px;height:42px;padding:9px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--gold);color:var(--mocha)}
 .mat-list b{display:block;font:500 21px/1.2 var(--serif);margin-bottom:3px}
 .mat-list span{font-size:15px;line-height:1.5;color:var(--ink-soft)}
-.mat-stats{display:flex;gap:36px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
-.mat-stats b{display:block;font:500 40px/1 var(--serif);color:var(--caramel)}
-.mat-stats span{font-size:13px;color:var(--ink-soft);letter-spacing:.06em}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,164,106,.25);border:1px solid rgba(201,164,106,.25)}
 .step{background:var(--espresso);padding:34px 30px 36px;display:grid;gap:14px;align-content:start;min-width:0;transition:background .4s}
 .step:hover{background:#2c1d16}
@@ -174,21 +163,6 @@ header{position:absolute;inset:0 0 auto 0;z-index:30;padding-top:env(safe-area-i
 @media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.steps{grid-template-columns:1fr}}
 
-/* mistakes */
-.mist{counter-reset:m;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 60px}
-.mist li{counter-increment:m;border-top:1px solid var(--line)}
-.mist button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:54px 1fr 24px;gap:14px;align-items:center;padding:22px 0;font:500 24px/1.2 var(--serif)}
-.mist button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.mist button::before{content:counter(m,decimal-leading-zero);font:italic 400 30px/1 var(--serif);color:var(--caramel)}
-.mist .pm{width:24px;height:24px;position:relative}
-.mist .pm::before,.mist .pm::after{content:"";position:absolute;left:4px;right:4px;top:11px;height:1.5px;background:var(--mocha);transition:transform .4s var(--ease)}
-.mist .pm::after{transform:rotate(90deg)}
-.mist button[aria-expanded="true"] .pm::after{transform:rotate(0)}
-.mist .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
-.mist .ans>p{overflow:hidden;color:var(--ink-soft);padding-left:68px;font-size:17px}
-.mist button[aria-expanded="true"]+.ans{grid-template-rows:1fr}
-.mist button[aria-expanded="true"]+.ans>p{padding-bottom:22px}
-@media (max-width:760px){.mist{grid-template-columns:1fr}.mist button{font-size:21px;grid-template-columns:44px 1fr 24px}.mist .ans>p{padding-left:58px}}
 
 /* consultation */
 .consult{background:radial-gradient(80% 70% at 20% 0%,#3f2a20 0%,transparent 60%),var(--espresso);color:var(--cream)}
@@ -361,28 +335,9 @@ footer{background:#1a100c;color:#a8927f;padding-block:34px calc(110px + env(safe
 
   <section class="mat" id="materialy" aria-labelledby="h-mat">
     <div class="wrap mat-in">
-      <div class="mat-stack" id="matStack" aria-label="Podgląd materiałów szkoleniowych">
-        <button type="button" data-pos="0" aria-label="Pokaż stronę: anatomia paznokcia"><img src="img/material-anatomia.jpg" alt="Strona z materiałów: infografika Anatomia paznokcia" loading="lazy" width="760" height="760"></button>
-        <button type="button" data-pos="1" aria-label="Pokaż stronę: budowa paznokcia"><img src="img/material-budowa.jpg" alt="Strona z materiałów: budowa paznokcia i praca świadomie" loading="lazy" width="760" height="760"></button>
-        <button type="button" data-pos="2" aria-label="Pokaż stronę: lekcja 1"><img src="img/material-lekcja1.jpg" alt="Strona z materiałów: podsumowanie lekcji 1 kursu Basic Manicure" loading="lazy" width="760" height="760"></button>
-        <span class="mat-tag">Kliknij, żeby przełożyć stronę</span>
-      </div>
-      <div>
         <div class="head" style="margin-bottom:0"><p class="kicker">Materiały do nauki</p><h2 id="h-mat">Moje materiały <em>zostają z&nbsp;Tobą</em></h2>
-        <p class="lede">Do kursu manicure dostajesz ode mnie materiały szkoleniowe w PDF, które przygotowałam sama. Wszystko, co pokazuję na zajęciach, masz potem czarno na białym i możesz do tego wracać w domu.</p></div>
+        <p class="lede">Do kursu manicure dostajesz ode mnie materiały szkoleniowe w PDF, które przygotowałam. Wszystko, co pokazuję na zajęciach, masz potem czarno na białym i możesz do tego wracać w domu.</p></div>
         <ul class="mat-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M15 4v4h4M8 12h8M8 16h6"/></svg><div><b>Lekcje krok po kroku</b><span>Anatomia paznokcia, dezynfekcja i sterylizacja, przygotowanie płytki, praca z frezarką i manicure kombinowany.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg><div><b>Ilustracje i infografiki</b><span>Budowa paznokcia, rodzaje frezów i kolejność pracy pokazane na schematach.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12.5l2.6 2.6L16 9.6"/></svg><div><b>Checklisty do pracy</b><span>Na przykład kontrola płytki przed aplikacją i kolejność pracy frezarką. Odhaczasz punkt po punkcie.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg><div><b>Najczęstsze błędy</b><span>Czego unikać na początku i dlaczego, opisane przy lekcjach.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-.9.8-.9 1.4V14M12 17h.01"/></svg><div><b>Mini test z odpowiedziami</b><span>Sprawdzasz swoją wiedzę po lekcji anatomii.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V6.5a1.5 1.5 0 0 1 3 0V12M11 11V5a1.5 1.5 0 0 1 3 0v6M14 11V6.5a1.5 1.5 0 0 1 3 0V14c0 3.5-2.5 6-6 6-2.4 0-3.8-1-5-3l-2.2-3.6a1.4 1.4 0 0 1 2.3-1.6L8 13"/></svg><div><b>Ćwiczenia praktyczne</b><span>Zadania do przećwiczenia, zanim zaczniesz pracę na modelce.</span></div></li></ul>
-      </div>
-    </div>
-  </section>
-
-  <section aria-labelledby="h-mist">
-    <div class="wrap">
-      <div class="head">
-        <p class="kicker">Najczęstsze błędy</p>
-        <h2 id="h-mist">Dlaczego manicure <em>wygląda na brudny?</em></h2>
-        <p class="lede">Siedem błędów, które najczęściej widzę u początkujących. Kliknij, żeby zobaczyć wyjaśnienie.</p>
-      </div>
-      <ol class="mist" id="mist"></ol>
     </div>
   </section>
 
@@ -482,7 +437,6 @@ footer{background:#1a100c;color:#a8927f;padding-block:34px calc(110px + env(safe
     {t:'Pedicure klasyczny', lvl:'Także dla siebie', h:8, li:['Profesjonalny pedicure krok po kroku','Techniki do pracy u klientki albo w domu']},
     {t:'Pedicure hybrydowy', lvl:'Pedicure z kolorem', h:6, li:['Profesjonalny pedicure krok po kroku','Techniki do pracy u klientki albo w domu']}
   ];
-  const MISTAKES = [['Niedokładnie opracowana skórka','Resztki naskórka przy wale sprawiają, że linia produktu nie wygląda czysto.'],['Pył po piłowaniu','Zostawiony przy skórkach albo pod wolnym brzegiem psuje efekt po nałożeniu koloru.'],['Produkt zalany na skórki','Nawet minimalne dotknięcie skóry bazą daje efekt rozlanego manicure.'],['Zbyt gruba warstwa','Gruby materiał przy skórkach zabiera stylizacji lekkość.'],['Brak oczyszczenia płytki','Tłuszcz i pozostałości produktu powodują nierówną aplikację.'],['Nieczysta linia przy skórkach','Liczą się milimetry. Równa linia decyduje o efekcie wow.'],['Źle dobrany kształt','Kształt niedopasowany do płytki sprawia, że nawet idealny kolor wygląda ciężko.']];
   const FAQ = [['Ile kosztuje kurs?','Cenę podaję na darmowej konsultacji na Zoomie, po tym jak dobierzemy kurs do Twojego poziomu.'],['Czy muszę mieć doświadczenie?','Nie. Kurs manicure klasycznego zaczynamy od zera.'],['Czy dostanę certyfikat?','Tak, po kursie manicure klasycznego i hybrydowego.'],['Czy dostanę materiały do nauki?','Tak. Na kursie manicure dostajesz moje materiały szkoleniowe w PDF z ilustracjami, checklistami i mini testem. Zostają u Ciebie po kursie.'],['Ile trwa kurs?','Od 4 do 8 godzin zajęć, zależnie od kursu.'],['Kiedy są terminy?','Terminy ustalam indywidualnie. Na konsultacji zaproponuję Ci najbliższy wolny dzień.'],['Gdzie odbywają się zajęcia?','W moim salonie przy ul. Wacława Balcerskiego 10, lok. 2 w Gdańsku Osowej.'],['Czy pedicure mogę zrobić tylko dla siebie?','Tak. Kurs pedicure jest też dla osób, które chcą dbać o stopy samodzielnie w domu.']];
 
   document.getElementById('courses').innerHTML = COURSES.map(c=>`
@@ -496,8 +450,6 @@ footer{background:#1a100c;color:#a8927f;padding-block:34px calc(110px + env(safe
       <a class="btn pick" href="#konsultacja">Zapytaj o termin</a>
     </article>`).join('');
 
-  document.getElementById('mist').innerHTML = MISTAKES.map((m,i)=>`<li><button type="button" aria-expanded="false" aria-controls="m${i}">${m[0]}<span class="pm" aria-hidden="true"></span></button><div class="ans" id="m${i}"><p>${m[1]}</p></div></li>`).join('');
-  document.getElementById('mist').addEventListener('click',e=>{ const b=e.target.closest('button'); if(b) b.setAttribute('aria-expanded', b.getAttribute('aria-expanded')!=='true'); });
 
   document.getElementById('faq').innerHTML = FAQ.map(f=>`<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join('');
 
@@ -515,9 +467,6 @@ footer{background:#1a100c;color:#a8927f;padding-block:34px calc(110px + env(safe
     document.querySelectorAll('[data-rv]').forEach((el,i)=>{ if(el.getBoundingClientRect().top>innerHeight){ el.classList.add('pre'); el.style.transitionDelay=((i%4)*90)+'ms'; io.observe(el); } });
   }
 })();
-</script>
-<script>
-(function(){const m=document.getElementById('matStack');if(!m)return;const bs=[...m.querySelectorAll('button')];bs.forEach(b=>b.addEventListener('click',()=>{const p=+b.dataset.pos;if(p===0){bs.forEach(x=>x.dataset.pos=(+x.dataset.pos+2)%3);return}bs.forEach(x=>{const q=+x.dataset.pos;x.dataset.pos=q===p?0:(q<p?q+1:q)})}))})();
 </script>
 </body>
 </html>
