@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Alina Ivanets Nails Academy</title>
-<meta name="description" content="Kursy manicure i pedicure z Aliną Ivanets w Gdańsku Osowej. Od zera do pierwszych klientek, z certyfikatem. Cena i termin na konsultacji na Zoomie.">
+<meta name="description" content="Kursy manicure i pedicure z Aliną Ivanets w Gdańsku Osowej. Od zera do pierwszych klientek, z certyfikatem. Cena i termin na darmowej konsultacji na Zoomie.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23241813' stroke='%23c9a46a' stroke-width='2'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-size='26' fill='%23c9a46a'%3EAI%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,6 +85,9 @@ header{position:absolute;inset:0 0 auto 0;z-index:30;padding-top:env(safe-area-i
 .hero h1 .ln>span{display:inline-block}
 .hero .lede{margin-inline:auto}
 .hero-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.free{display:inline-flex;align-items:center;justify-self:start;width:max-content;padding:6px 12px;border-radius:999px;background:var(--gold);color:var(--espresso);font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase}
+.hero-free{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;margin-top:-6px;font-size:15px;color:#d8c4b0}
+.price-band strong{color:var(--mocha);font-weight:600}
 .hero-facts{display:flex;flex-wrap:wrap;justify-content:center;border-top:1px solid rgba(201,164,106,.3);padding-top:24px;margin-top:4px}
 .hero-facts div{padding-inline:26px;border-right:1px solid rgba(201,164,106,.3)}
 .hero-facts div:last-child{border:0}
@@ -296,9 +299,10 @@ footer{background:#1a100c;color:#a8927f;padding-block:34px calc(110px + env(safe
       <h1 id="h1"><span class="ln"><span>Manicure od zera</span></span><span class="ln"><span>do <em>pierwszych klientek</em></span></span></h1>
       <p class="lede">Cztery kursy manicure i pedicure z Aliną Ivanets. Technika, wiedza i praktyka, żebyś po kursie pracowała pewnie: w salonie, w domu albo w podróży.</p>
       <div class="hero-actions">
-        <a class="btn btn-gold" href="#kursy">Zobacz kursy <span class="arr" aria-hidden="true">→</span></a>
-        <a class="btn btn-line" href="#konsultacja"><svg aria-hidden="true"><use href="#i-zoom"/></svg>Konsultacja na Zoomie</a>
+        <a class="btn btn-gold" href="#konsultacja"><svg aria-hidden="true"><use href="#i-zoom"/></svg>Umów darmową konsultację</a>
+        <a class="btn btn-line" href="#kursy">Zobacz kursy <span class="arr" aria-hidden="true">→</span></a>
       </div>
+      <p class="hero-free"><span class="free">Gratis</span>Konsultacja na Zoomie jest bezpłatna. Dobierzemy kurs do Twojego poziomu.</p>
     </div>
   </section>
 
@@ -311,8 +315,8 @@ footer{background:#1a100c;color:#a8927f;padding-block:34px calc(110px + env(safe
       </div>
       <div class="courses" id="courses"></div>
       <div class="price-band">
-        <p>Cenę i termin kursu ustalimy na konsultacji na Zoomie.</p>
-        <a class="btn btn-gold" href="#konsultacja"><svg aria-hidden="true"><use href="#i-zoom"/></svg>Umów konsultację</a>
+        <p>Cenę i termin kursu ustalimy na <strong>darmowej konsultacji</strong> na Zoomie.</p>
+        <a class="btn btn-gold" href="#konsultacja"><svg aria-hidden="true"><use href="#i-zoom"/></svg>Umów darmową konsultację</a>
       </div>
     </div>
   </section>
@@ -386,9 +390,9 @@ footer{background:#1a100c;color:#a8927f;padding-block:34px calc(110px + env(safe
     <div class="wrap c-grid">
       <div>
         <div class="head" style="margin-bottom:30px">
-          <p class="kicker" style="color:var(--gold)">Zapis</p>
-          <h2 id="h-kons">Konsultacja <em style="color:var(--gold)">na Zoomie</em></h2>
-          <p class="lede" style="color:#cdb9a6">Na rozmowie dobierzemy kurs do Twojego poziomu, podam cenę i ustalimy termin.</p>
+          <p class="kicker" style="color:var(--gold)">Zapis · bezpłatnie</p>
+          <h2 id="h-kons">Darmowa konsultacja <em style="color:var(--gold)">na Zoomie</em></h2>
+          <p class="lede" style="color:#cdb9a6">Rozmowa jest bezpłatna. Dobierzemy na niej kurs do Twojego poziomu, podam cenę i ustalimy termin.</p>
         </div>
         <ol class="how">
           <li><div><b>Napisz albo zadzwoń</b><span>Na Instagramie, Facebooku albo pod numer 789 462 208. Umówimy godzinę rozmowy.</span></div></li>
@@ -397,7 +401,8 @@ footer{background:#1a100c;color:#a8927f;padding-block:34px calc(110px + env(safe
         </ol>
       </div>
       <div class="c-card rv" data-rv>
-        <h3>Umów konsultację</h3>
+        <span class="free">Gratis</span>
+        <h3>Umów darmową konsultację</h3>
         <a class="btn btn-gold" id="zoomLink" href="https://us05web.zoom.us/j/9655714996?pwd=a9em4xJflqOaA95VfyCVelHYHKR08D.1" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zoom"/></svg>Link do spotkania Zoom</a>
         <div class="c-links">
           <a class="btn btn-line" href="https://www.instagram.com/aliczka_ivanets_/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>Instagram</a>
@@ -463,8 +468,8 @@ footer{background:#1a100c;color:#a8927f;padding-block:34px calc(110px + env(safe
 
 <div class="bar" id="bar" role="region" aria-label="Szybki zapis">
   <div class="wrap">
-    <div class="bar-info"><b>Ceny i terminy na konsultacji</b><span>Rozmowa na Zoomie · 4 kursy · certyfikat</span></div>
-    <a class="btn btn-gold" href="#konsultacja">Umów konsultację</a>
+    <div class="bar-info"><b>Darmowa konsultacja na Zoomie</b><span>Cenę i termin kursu ustalimy na rozmowie</span></div>
+    <a class="btn btn-gold" href="#konsultacja">Umów za darmo</a>
   </div>
 </div>
 
@@ -478,7 +483,7 @@ footer{background:#1a100c;color:#a8927f;padding-block:34px calc(110px + env(safe
     {t:'Pedicure hybrydowy', lvl:'Pedicure z kolorem', h:6, li:['Profesjonalny pedicure krok po kroku','Techniki do pracy u klientki albo w domu']}
   ];
   const MISTAKES = [['Niedokładnie opracowana skórka','Resztki naskórka przy wale sprawiają, że linia produktu nie wygląda czysto.'],['Pył po piłowaniu','Zostawiony przy skórkach albo pod wolnym brzegiem psuje efekt po nałożeniu koloru.'],['Produkt zalany na skórki','Nawet minimalne dotknięcie skóry bazą daje efekt rozlanego manicure.'],['Zbyt gruba warstwa','Gruby materiał przy skórkach zabiera stylizacji lekkość.'],['Brak oczyszczenia płytki','Tłuszcz i pozostałości produktu powodują nierówną aplikację.'],['Nieczysta linia przy skórkach','Liczą się milimetry. Równa linia decyduje o efekcie wow.'],['Źle dobrany kształt','Kształt niedopasowany do płytki sprawia, że nawet idealny kolor wygląda ciężko.']];
-  const FAQ = [['Ile kosztuje kurs?','Cenę podaję na konsultacji na Zoomie, po tym jak dobierzemy kurs do Twojego poziomu.'],['Czy muszę mieć doświadczenie?','Nie. Kurs manicure klasycznego zaczynamy od zera.'],['Czy dostanę certyfikat?','Tak, po kursie manicure klasycznego i hybrydowego.'],['Czy dostanę materiały do nauki?','Tak. Na kursie manicure dostajesz moje materiały szkoleniowe w PDF z ilustracjami, checklistami i mini testem. Zostają u Ciebie po kursie.'],['Ile trwa kurs?','Od 4 do 8 godzin zajęć, zależnie od kursu.'],['Kiedy są terminy?','Terminy ustalam indywidualnie. Na konsultacji zaproponuję Ci najbliższy wolny dzień.'],['Gdzie odbywają się zajęcia?','W moim salonie przy ul. Wacława Balcerskiego 10, lok. 2 w Gdańsku Osowej.'],['Czy pedicure mogę zrobić tylko dla siebie?','Tak. Kurs pedicure jest też dla osób, które chcą dbać o stopy samodzielnie w domu.']];
+  const FAQ = [['Ile kosztuje kurs?','Cenę podaję na darmowej konsultacji na Zoomie, po tym jak dobierzemy kurs do Twojego poziomu.'],['Czy muszę mieć doświadczenie?','Nie. Kurs manicure klasycznego zaczynamy od zera.'],['Czy dostanę certyfikat?','Tak, po kursie manicure klasycznego i hybrydowego.'],['Czy dostanę materiały do nauki?','Tak. Na kursie manicure dostajesz moje materiały szkoleniowe w PDF z ilustracjami, checklistami i mini testem. Zostają u Ciebie po kursie.'],['Ile trwa kurs?','Od 4 do 8 godzin zajęć, zależnie od kursu.'],['Kiedy są terminy?','Terminy ustalam indywidualnie. Na konsultacji zaproponuję Ci najbliższy wolny dzień.'],['Gdzie odbywają się zajęcia?','W moim salonie przy ul. Wacława Balcerskiego 10, lok. 2 w Gdańsku Osowej.'],['Czy pedicure mogę zrobić tylko dla siebie?','Tak. Kurs pedicure jest też dla osób, które chcą dbać o stopy samodzielnie w domu.']];
 
   document.getElementById('courses').innerHTML = COURSES.map(c=>`
     <article class="course${c.feat?' feat':''} rv" data-rv>
@@ -487,7 +492,7 @@ footer{background:#1a100c;color:#a8927f;padding-block:34px calc(110px + env(safe
       <h3>${c.t}</h3>
       <div class="meta"><span>${c.h} h zajęć</span>${c.cert?'<span>Certyfikat</span>':''}<span>Praktyka</span></div>
       <ul>${c.li.map(x=>`<li>${x}</li>`).join('')}</ul>
-      <p class="cost">Cena na konsultacji</p>
+      <p class="cost">Cena na darmowej konsultacji</p>
       <a class="btn pick" href="#konsultacja">Zapytaj o termin</a>
     </article>`).join('');
 
@@ -505,7 +510,7 @@ footer{background:#1a100c;color:#a8927f;padding-block:34px calc(110px + env(safe
 
   if (!RM){
     document.querySelectorAll('.hero h1 .ln>span').forEach((s,i)=>s.animate([{transform:'translateY(105%)'},{transform:'none'}],{duration:1100,delay:150+i*140,easing:'cubic-bezier(0.22,1,0.36,1)',fill:'backwards'}));
-    document.querySelectorAll('.hero .kicker,.hero .lede,.hero-actions,.hero-facts').forEach((el,i)=>el.animate([{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'none'}],{duration:900,delay:(i?550:0)+i*120,easing:'cubic-bezier(0.22,1,0.36,1)',fill:'backwards'}));
+    document.querySelectorAll('.hero .kicker,.hero .lede,.hero-actions,.hero-free').forEach((el,i)=>el.animate([{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'none'}],{duration:900,delay:(i?550:0)+i*120,easing:'cubic-bezier(0.22,1,0.36,1)',fill:'backwards'}));
     const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.remove('pre'); io.unobserve(e.target);} }),{threshold:.15});
     document.querySelectorAll('[data-rv]').forEach((el,i)=>{ if(el.getBoundingClientRect().top>innerHeight){ el.classList.add('pre'); el.style.transitionDelay=((i%4)*90)+'ms'; io.observe(el); } });
   }
