@@ -67,6 +67,7 @@ header{position:absolute;inset:0 0 auto 0;z-index:30;padding-top:env(safe-area-i
 .nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px;color:var(--cream)}
 .logo{display:flex;align-items:baseline;gap:10px;text-decoration:none}
 .logo b{font:400 34px/1 var(--script);color:var(--gold)}
+.logo b{white-space:nowrap}@media (max-width:420px){.logo b{font-size:26px}.logo span{font-size:9px;letter-spacing:.22em}}
 .logo span{font:400 11px/1.2 var(--sans);letter-spacing:.3em;text-transform:uppercase;opacity:.8}
 .socials{display:flex;gap:10px}
 .socials a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(201,164,106,.45);color:var(--gold);transition:background .3s}
@@ -255,7 +256,7 @@ footer{background:#1a100c;color:#a8927f;padding-block:34px calc(110px + env(safe
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#top" aria-label="Alina Ivanets Nails Academy"><b>Aliczka</b><span>Nails Academy</span></a>
+    <a class="logo" href="#top" aria-label="Alina Ivanets Nails Academy"><b>Alina Ivanets</b><span>Nails Academy</span></a>
     <nav class="socials" aria-label="Media społecznościowe">
       <a href="https://www.instagram.com/aliczka_ivanets_/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
       <a href="https://www.facebook.com/aliczka.ivanets" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
