@@ -384,6 +384,28 @@ footer.site .drip-top{position:absolute;left:0;top:-1px;width:100%;height:70px;d
 .acad-portrait .badge span{font:400 .68rem/1.2 var(--f-caps);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 .academy .bk{font:400 1.35rem/1 var(--f-script);color:#d9b98a;margin:10px 0 -6px 48px}
 @media (max-width:520px){.academy .bk{margin-left:0}}
+.mat{background:linear-gradient(180deg,var(--bg),#f7e3df);overflow-x:clip}
+.mat-in{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(36px,6vw,80px);align-items:center}
+@media (max-width:860px){.mat-in{grid-template-columns:1fr}}
+.mat-stack{position:relative;width:100%;max-width:460px;aspect-ratio:1/1.08;margin-inline:auto}
+.mat-stack button{all:unset;box-sizing:border-box;cursor:pointer;position:absolute;left:13%;top:7%;width:74%;aspect-ratio:1;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 34px 60px -22px rgba(90,30,40,.5),0 0 0 6px #fff;transition:transform .7s var(--ease),filter .4s}
+.mat-stack img{display:block;width:100%;height:100%;object-fit:cover}
+.mat-stack button[data-pos="0"]{z-index:3;transform:rotate(-2deg)}
+.mat-stack button[data-pos="1"]{z-index:2;transform:translate(-15%,6%) rotate(-10deg);filter:brightness(.97)}
+.mat-stack button[data-pos="2"]{z-index:1;transform:translate(15%,2%) rotate(9deg);filter:brightness(.94)}
+@media (hover:hover){.mat-stack:hover button[data-pos="1"]{transform:translate(-22%,8%) rotate(-14deg)}.mat-stack:hover button[data-pos="2"]{transform:translate(22%,3%) rotate(13deg)}.mat-stack:hover button[data-pos="0"]{transform:rotate(0) translateY(-6px)}}
+.mat-stack button:focus-visible{outline:2px solid var(--rose-deep);outline-offset:8px}
+.mat-tag{position:absolute;left:50%;bottom:0;transform:translateX(-50%);white-space:nowrap;font:400 .7rem/1 var(--f-caps);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.mat-copy h2{margin:12px 0 16px}
+.mat-list{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
+@media (max-width:560px){.mat-list{grid-template-columns:1fr}}
+.mat-list li{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start}
+.mat-list svg{width:40px;height:40px;padding:8px;border-radius:12px;background:var(--surface-2);border:1px solid var(--line);color:var(--rose-deep)}
+.mat-list b{display:block;font:400 1rem/1.3 var(--f-caps);letter-spacing:.03em;margin-bottom:3px}
+.mat-list span{font-size:.88rem;line-height:1.5;color:var(--muted)}
+.mat-stats{display:flex;gap:34px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+.mat-stats b{display:block;font:500 2.2rem/1 var(--f-display);color:var(--rose-deep)}
+.mat-stats span{font-size:.78rem;color:var(--muted);letter-spacing:.06em}
 .rules{background:radial-gradient(70% 120% at 20% 0%,#3a2426,var(--plum) 70%);color:var(--on-plum);text-align:center}
 .rules .eyebrow{color:var(--gold-1)}
 .rules h2{color:#fff}
@@ -836,6 +858,24 @@ footer.site .drip-top{position:absolute;left:0;top:-1px;width:100%;height:70px;d
     </div>
   </section>
 
+  <section class="mat" id="materialy">
+    <div class="wrap mat-in">
+      <div class="mat-stack" id="matStack" aria-label="Podgląd materiałów szkoleniowych">
+        <button type="button" data-pos="0" aria-label="Pokaż stronę: anatomia paznokcia"><img src="img/material-anatomia.jpg" alt="Strona z materiałów: infografika Anatomia paznokcia" loading="lazy" width="760" height="760"></button>
+        <button type="button" data-pos="1" aria-label="Pokaż stronę: budowa paznokcia"><img src="img/material-budowa.jpg" alt="Strona z materiałów: budowa paznokcia i praca świadomie" loading="lazy" width="760" height="760"></button>
+        <button type="button" data-pos="2" aria-label="Pokaż stronę: lekcja 1"><img src="img/material-lekcja1.jpg" alt="Strona z materiałów: podsumowanie lekcji 1 kursu Basic Manicure" loading="lazy" width="760" height="760"></button>
+        <span class="mat-tag">Kliknij, żeby przełożyć stronę</span>
+      </div>
+      <div class="mat-copy">
+        <p class="eyebrow">Materiały do nauki</p>
+        <h2>Moje materiały zostają z&nbsp;Tobą</h2>
+        <p class="lede">Do kursu manicure dostajesz ode mnie materiały szkoleniowe w PDF, które przygotowałam sama. Wszystko, co pokazuję na zajęciach, masz potem czarno na białym i możesz do tego wracać w domu.</p>
+        <ul class="mat-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M15 4v4h4M8 12h8M8 16h6"/></svg><div><b>5 lekcji krok po kroku</b><span>Anatomia paznokcia, dezynfekcja i sterylizacja, przygotowanie płytki, praca z frezarką i manicure kombinowany.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg><div><b>Ilustracje i infografiki</b><span>Budowa paznokcia, rodzaje frezów i kolejność pracy pokazane na schematach.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12.5l2.6 2.6L16 9.6"/></svg><div><b>Checklisty do pracy</b><span>Na przykład kontrola płytki przed aplikacją i kolejność pracy frezarką. Odhaczasz punkt po punkcie.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg><div><b>Najczęstsze błędy</b><span>Czego unikać na początku i dlaczego, opisane przy lekcjach.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-.9.8-.9 1.4V14M12 17h.01"/></svg><div><b>Mini test z odpowiedziami</b><span>Sprawdzasz swoją wiedzę po lekcji anatomii.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V6.5a1.5 1.5 0 0 1 3 0V12M11 11V5a1.5 1.5 0 0 1 3 0v6M14 11V6.5a1.5 1.5 0 0 1 3 0V14c0 3.5-2.5 6-6 6-2.4 0-3.8-1-5-3l-2.2-3.6a1.4 1.4 0 0 1 2.3-1.6L8 13"/></svg><div><b>Ćwiczenia praktyczne</b><span>Zadania do przećwiczenia, zanim zaczniesz pracę na modelce.</span></div></li></ul>
+        <div class="mat-stats"><div><b>54</b><span>strony</span></div><div><b>5</b><span>lekcji</span></div><div><b>PDF</b><span>zostaje u Ciebie</span></div></div>
+      </div>
+    </div>
+  </section>
+
   <section class="rules">
     <div class="wrap">
       <p class="eyebrow">Zasady mojej akademii</p>
@@ -957,12 +997,12 @@ footer.site .drip-top{position:absolute;left:0;top:-1px;width:100%;height:70px;d
     {t:'Pedicure hybrydowy',lvl:'Pedicure z kolorem',reg:1800,pro:1620,h:6,li:['Profesjonalny pedicure krok po kroku','Techniki do pracy u klientki albo w domu']}
   ];
   const MISTAKES=[['Niedokładnie opracowana skórka','Resztki naskórka przy wale sprawiają, że linia produktu nie wygląda czysto.'],['Pył po piłowaniu','Zostawiony przy skórkach albo pod wolnym brzegiem psuje efekt po nałożeniu koloru.'],['Produkt zalany na skórki','Nawet minimalne dotknięcie skóry bazą daje efekt rozlanego manicure.'],['Zbyt gruba warstwa','Gruby materiał przy skórkach zabiera stylizacji lekkość.'],['Brak oczyszczenia płytki','Tłuszcz i pozostałości produktu powodują nierówną aplikację.'],['Nieczysta linia przy skórkach','Liczą się milimetry. Równa linia decyduje o efekcie wow.'],['Źle dobrany kształt','Kształt niedopasowany do płytki sprawia, że nawet idealny kolor wygląda ciężko.']];
-  const FAQ=[['Czy muszę mieć doświadczenie?','Nie. Kurs manicure klasycznego zaczynamy od zera.'],['Czy dostanę certyfikat?','Tak, po kursie manicure klasycznego i hybrydowego. Dostajesz też moje materiały szkoleniowe z ilustracjami.'],['Ile trwa kurs?','Od 4 do 8 godzin zajęć, zależnie od kursu.'],['Kiedy są terminy?','Terminy ustalam indywidualnie. Zostaw zgłoszenie, a zaproponuję Ci najbliższy wolny dzień.'],['Gdzie odbywają się zajęcia?','W moim salonie przy ul. Wacława Balcerskiego 10, lok. 2 w Gdańsku Osowej.'],['Czy pedicure mogę zrobić tylko dla siebie?','Tak. Kurs pedicure jest też dla osób, które chcą dbać o stopy samodzielnie w domu.']];
+  const FAQ=[['Czy muszę mieć doświadczenie?','Nie. Kurs manicure klasycznego zaczynamy od zera.'],['Czy dostanę certyfikat?','Tak, po kursie manicure klasycznego i hybrydowego. Na kursie manicure dostajesz też moje materiały szkoleniowe w PDF.'],['Ile trwa kurs?','Od 4 do 8 godzin zajęć, zależnie od kursu.'],['Kiedy są terminy?','Terminy ustalam indywidualnie. Zostaw zgłoszenie, a zaproponuję Ci najbliższy wolny dzień.'],['Gdzie odbywają się zajęcia?','W moim salonie przy ul. Wacława Balcerskiego 10, lok. 2 w Gdańsku Osowej.'],['Czy pedicure mogę zrobić tylko dla siebie?','Tak. Kurs pedicure jest też dla osób, które chcą dbać o stopy samodzielnie w domu.']];
 
   /* ---------- header & routing ---------- */
   const hdr=$('header'),prog=$('#progress'); const onSc=()=>{hdr.classList.toggle('scrolled',scrollY>24);const m=document.documentElement.scrollHeight-innerHeight;prog.style.transform=`scaleX(${m>0?Math.min(1,scrollY/m):0})`};addEventListener('scroll',onSc,{passive:true});addEventListener('resize',onSc);
   const yr=document.getElementById('yr');if(yr)yr.textContent=new Date().getFullYear();
-  const views=$$('[data-view]'), tabs=$$('[data-tab]'), sub={program:'kursy',zapis:'kursy',sciezka:'kursy'};
+  const views=$$('[data-view]'), tabs=$$('[data-tab]'), sub={program:'kursy',zapis:'kursy',sciezka:'kursy',materialy:'kursy'};
   let routed=false;
   function routeNow(){
     const h=(location.hash||'#start').slice(1);
@@ -1073,7 +1113,7 @@ footer.site .drip-top{position:absolute;left:0;top:-1px;width:100%;height:70px;d
     a.innerHTML=`<span class="level">${c.lvl}</span><h3>${c.t}</h3><div><div class="odo" data-i="${i}" aria-live="polite">${odoHTML()}</div><div class="odo-old"></div></div>
       <div class="dur"><div><span>Czas zajęć</span><span>${c.h} h</span></div><i style="--p:${c.h/8*100}%"></i></div>
       <ul>${c.li.map(x=>`<li>${x}</li>`).join('')}</ul>
-      <div>${c.cert?'<p class="cert"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>Certyfikat po kursie</p>':''}<a class="btn ${c.feat?'btn-gold':'btn-line'} magnet" href="#zapis" data-course="${c.t}" style="margin-top:10px">Zapisz się</a></div>`;
+      <div>${c.t.startsWith('Manicure')?'<p class="cert"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M15 4v4h4M8 12h8M8 16h6"/></svg>Materiały szkoleniowe w PDF</p>':''}${c.cert?'<p class="cert"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>Certyfikat po kursie</p>':''}<a class="btn ${c.feat?'btn-gold':'btn-line'} magnet" href="#zapis" data-course="${c.t}" style="margin-top:10px">Zapisz się</a></div>`;
     cEl.appendChild(a)});
   function setOdo(el,val,instant){
     const s=String(val).padStart(4,' ').split('');const ds=$$('.d',el),sep=$('.sep',el);
@@ -1100,6 +1140,9 @@ footer.site .drip-top{position:absolute;left:0;top:-1px;width:100%;height:70px;d
   FAQ.forEach(([q,a],i)=>{const b=document.createElement('button');b.type='button';b.className='qcard';b.style.setProperty('--r',tilts[i%6]+'deg');b.setAttribute('aria-expanded','false');
     b.innerHTML=`<span class="in"><span class="fa"><em>${String(i+1).padStart(2,'0')}</em><b>${q}</b><small>Kliknij, żeby zobaczyć odpowiedź <span aria-hidden="true">↻</span></small></span><span class="ba"><strong>Odpowiedź</strong>${a}</span></span>`;
     b.addEventListener('click',()=>{const o=b.classList.toggle('open');b.setAttribute('aria-expanded',o)});qg.appendChild(b)});
+
+  /* ---------- materials stack ---------- */
+  const mst=$('#matStack');if(mst){const bs=$$('button',mst);bs.forEach(b=>b.addEventListener('click',()=>{const p=+b.dataset.pos;if(p===0){bs.forEach(x=>x.dataset.pos=(+x.dataset.pos+2)%3);return}bs.forEach(x=>{const q=+x.dataset.pos;x.dataset.pos=q===p?0:(q<p?q+1:q)})}))}
 
   /* ---------- curriculum: polish brush painting a lacquer trail ---------- */
   const grid=$('#curriGrid'), ink=$('#ink'), trail=$('#trail'), brushG=$('#brushG'), dropsG=$('#drops'), mods=$$('.mod',grid);
@@ -1180,7 +1223,7 @@ footer.site .drip-top{position:absolute;left:0;top:-1px;width:100%;height:70px;d
   /* ---------- reveals, bars, counters, magnets, tilt ---------- */
   function setupReveals(scope){
     if(!G||!window.ScrollTrigger||RM)return;
-    $$('section .head, .why > div, .shot, .cat, blockquote, .place, .flip, .qcard, .card, .socials, .score, .facts div, .rule, .rules .motto',scope).forEach(el=>{if(el.dataset.rv)return;el.dataset.rv=1;
+    $$('section .head, .why > div, .shot, .cat, blockquote, .place, .flip, .qcard, .card, .socials, .score, .facts div, .rule, .rules .motto, .mat-copy, .mat-list li',scope).forEach(el=>{if(el.dataset.rv)return;el.dataset.rv=1;
       G.from(el,{y:40,opacity:0,duration:.8,ease:'power3.out',clearProps:'transform,opacity',scrollTrigger:{trigger:el,start:'top 88%',once:true}})});
     $$('.course',scope).forEach((el,i)=>{if(el.dataset.rv)return;el.dataset.rv=1;G.from(el,{y:50,opacity:0,duration:.8,delay:i*.08,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%',once:true}})});
     $$('.bars i, .dur i',scope).forEach(el=>{if(el.dataset.rv)return;el.dataset.rv=1;G.fromTo(el,{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:.9,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%',once:true}})});

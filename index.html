@@ -137,6 +137,27 @@ header{position:absolute;inset:0 0 auto 0;z-index:30;padding-top:env(safe-area-i
 @media (max-width:880px){.you-grid{grid-template-columns:1fr}}
 
 /* program */
+.mat{background:linear-gradient(180deg,var(--paper),var(--cream));overflow-x:clip}
+.mat-in{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(36px,6vw,80px);align-items:center}
+@media (max-width:900px){.mat-in{grid-template-columns:1fr}}
+.mat-stack{position:relative;width:100%;max-width:470px;aspect-ratio:1/1.08;margin-inline:auto}
+.mat-stack button{all:unset;box-sizing:border-box;cursor:pointer;position:absolute;left:13%;top:7%;width:74%;aspect-ratio:1;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 34px 60px -22px rgba(33,21,16,.55),0 0 0 6px #fff;transition:transform .7s var(--ease),filter .4s}
+.mat-stack img{display:block;width:100%;height:100%;object-fit:cover}
+.mat-stack button[data-pos="0"]{z-index:3;transform:rotate(-2deg)}
+.mat-stack button[data-pos="1"]{z-index:2;transform:translate(-15%,6%) rotate(-10deg);filter:brightness(.97)}
+.mat-stack button[data-pos="2"]{z-index:1;transform:translate(15%,2%) rotate(9deg);filter:brightness(.94)}
+@media (hover:hover){.mat-stack:hover button[data-pos="1"]{transform:translate(-22%,8%) rotate(-14deg)}.mat-stack:hover button[data-pos="2"]{transform:translate(22%,3%) rotate(13deg)}.mat-stack:hover button[data-pos="0"]{transform:rotate(0) translateY(-6px)}}
+.mat-stack button:focus-visible{outline:2px solid var(--gold);outline-offset:8px}
+.mat-tag{position:absolute;left:50%;bottom:0;transform:translateX(-50%);white-space:nowrap;font:400 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--mocha)}
+.mat-list{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:20px 24px}
+@media (max-width:560px){.mat-list{grid-template-columns:1fr}}
+.mat-list li{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start}
+.mat-list svg{width:42px;height:42px;padding:9px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--gold);color:var(--mocha)}
+.mat-list b{display:block;font:500 21px/1.2 var(--serif);margin-bottom:3px}
+.mat-list span{font-size:15px;line-height:1.5;color:var(--ink-soft)}
+.mat-stats{display:flex;gap:36px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+.mat-stats b{display:block;font:500 40px/1 var(--serif);color:var(--caramel)}
+.mat-stats span{font-size:13px;color:var(--ink-soft);letter-spacing:.06em}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,164,106,.25);border:1px solid rgba(201,164,106,.25)}
 .step{background:var(--espresso);padding:34px 30px 36px;display:grid;gap:14px;align-content:start;min-width:0;transition:background .4s}
 .step:hover{background:#2c1d16}
@@ -326,15 +347,32 @@ footer{background:#1a100c;color:#a8927f;padding-block:34px calc(110px + env(safe
       <div class="head">
         <p class="kicker">Program</p>
         <h2 id="h-learn">Na kursie <em>pokażę Ci</em></h2>
-        <p class="lede">Sześć etapów, przez które przeprowadzam każdą kursantkę. Od sterylnego stanowiska do certyfikatu.</p>
+        <p class="lede">Program kursu manicure lekcja po lekcji, od anatomii paznokcia do pracy na modelce. Do każdej lekcji dostajesz moje materiały.</p>
       </div>
       <div class="steps">
-        <article class="step rv" data-rv><span class="n">01</span><span class="tag">Każdy kurs</span><h3><svg class="check" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6"/></svg>Higiena i sterylizacja</h3><p>Sterylne narzędzia i czyste stanowisko. Bez tego nie ma profesjonalnego manicure.</p></article>
-        <article class="step rv" data-rv><span class="n">02</span><span class="tag">Podstawa</span><h3><svg class="check" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6"/></svg>Anatomia paznokcia</h3><p>Skąd rośnie paznokieć i gdzie kończy się bezpieczna praca frezarką.</p></article>
-        <article class="step rv" data-rv><span class="n">03</span><span class="tag">Manicure klasyczny</span><h3><svg class="check" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6"/></svg>Skórki i płytka</h3><p>Przygotowanie płytki, wycinanie skórek i piłowanie w kształt dopasowany do dłoni.</p></article>
-        <article class="step rv" data-rv><span class="n">04</span><span class="tag">Manicure i pedicure</span><h3><svg class="check" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6"/></svg>Praca z frezarką</h3><p>Dobór frezów i technika, która chroni płytkę i skórę.</p></article>
-        <article class="step rv" data-rv><span class="n">05</span><span class="tag">Manicure hybrydowy</span><h3><svg class="check" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6"/></svg>Hybryda i architektura</h3><p>Cienka warstwa, bez zalewania skórek, z architekturą dopasowaną do każdego paznokcia.</p></article>
-        <article class="step rv" data-rv><span class="n">06</span><span class="tag">Na koniec kursu</span><h3><svg class="check" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6"/></svg>Certyfikat i pierwsze klientki</h3><p>Kończysz z certyfikatem i wiesz, jak pracować w salonie, w domu albo w podróży.</p></article>
+        <article class="step rv" data-rv><span class="n">01</span><span class="tag">Lekcja 1</span><h3><svg class="check" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6"/></svg>Anatomia paznokcia</h3><p>Macierz, płytka, łożysko, skórka i wały. Wiesz, skąd rośnie paznokieć i dlaczego nie wolno opracowywać skóry zbyt głęboko.</p></article>
+        <article class="step rv" data-rv><span class="n">02</span><span class="tag">Lekcja 2</span><h3><svg class="check" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6"/></svg>Dezynfekcja i sterylizacja</h3><p>Mycie, dezynfekcja, płukanie, suszenie, pakowanie i autoklaw. Cała procedura krok po kroku.</p></article>
+        <article class="step rv" data-rv><span class="n">03</span><span class="tag">Lekcja 3</span><h3><svg class="check" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6"/></svg>Przygotowanie płytki</h3><p>Od stanowiska po bazę. Nie ścieramy naturalnego paznokcia, tylko przygotowujemy go do stylizacji.</p></article>
+        <article class="step rv" data-rv><span class="n">04</span><span class="tag">Lekcja 4</span><h3><svg class="check" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6"/></svg>Praca z frezarką</h3><p>Budowa frezarki, frezy i ich gradacja, prędkość, kierunek obrotów i nacisk. Frezarka to nie siła, to kontrola.</p></article>
+        <article class="step rv" data-rv><span class="n">05</span><span class="tag">Lekcja 5</span><h3><svg class="check" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6"/></svg>Manicure kombinowany</h3><p>Frezarka plus cążki lub nożyczki. Konsultacja z klientką i czysty kontur paznokcia.</p></article>
+        <article class="step rv" data-rv><span class="n">06</span><span class="tag">Na koniec kursu</span><h3><svg class="check" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6"/></svg>Ćwiczenie na modelce</h3><p>Cały zabieg pod moim okiem, potem certyfikat. Najpierw dokładność, szybkość przyjdzie z praktyką.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mat" id="materialy" aria-labelledby="h-mat">
+    <div class="wrap mat-in">
+      <div class="mat-stack" id="matStack" aria-label="Podgląd materiałów szkoleniowych">
+        <button type="button" data-pos="0" aria-label="Pokaż stronę: anatomia paznokcia"><img src="img/material-anatomia.jpg" alt="Strona z materiałów: infografika Anatomia paznokcia" loading="lazy" width="760" height="760"></button>
+        <button type="button" data-pos="1" aria-label="Pokaż stronę: budowa paznokcia"><img src="img/material-budowa.jpg" alt="Strona z materiałów: budowa paznokcia i praca świadomie" loading="lazy" width="760" height="760"></button>
+        <button type="button" data-pos="2" aria-label="Pokaż stronę: lekcja 1"><img src="img/material-lekcja1.jpg" alt="Strona z materiałów: podsumowanie lekcji 1 kursu Basic Manicure" loading="lazy" width="760" height="760"></button>
+        <span class="mat-tag">Kliknij, żeby przełożyć stronę</span>
+      </div>
+      <div>
+        <div class="head" style="margin-bottom:0"><p class="kicker">Materiały do nauki</p><h2 id="h-mat">Moje materiały <em>zostają z&nbsp;Tobą</em></h2>
+        <p class="lede">Do kursu manicure dostajesz ode mnie materiały szkoleniowe w PDF, które przygotowałam sama. Wszystko, co pokazuję na zajęciach, masz potem czarno na białym i możesz do tego wracać w domu.</p></div>
+        <ul class="mat-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M15 4v4h4M8 12h8M8 16h6"/></svg><div><b>5 lekcji krok po kroku</b><span>Anatomia paznokcia, dezynfekcja i sterylizacja, przygotowanie płytki, praca z frezarką i manicure kombinowany.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg><div><b>Ilustracje i infografiki</b><span>Budowa paznokcia, rodzaje frezów i kolejność pracy pokazane na schematach.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12.5l2.6 2.6L16 9.6"/></svg><div><b>Checklisty do pracy</b><span>Na przykład kontrola płytki przed aplikacją i kolejność pracy frezarką. Odhaczasz punkt po punkcie.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg><div><b>Najczęstsze błędy</b><span>Czego unikać na początku i dlaczego, opisane przy lekcjach.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-.9.8-.9 1.4V14M12 17h.01"/></svg><div><b>Mini test z odpowiedziami</b><span>Sprawdzasz swoją wiedzę po lekcji anatomii.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V6.5a1.5 1.5 0 0 1 3 0V12M11 11V5a1.5 1.5 0 0 1 3 0v6M14 11V6.5a1.5 1.5 0 0 1 3 0V14c0 3.5-2.5 6-6 6-2.4 0-3.8-1-5-3l-2.2-3.6a1.4 1.4 0 0 1 2.3-1.6L8 13"/></svg><div><b>Ćwiczenia praktyczne</b><span>Zadania do przećwiczenia, zanim zaczniesz pracę na modelce.</span></div></li></ul>
+        <div class="mat-stats"><div><b>54</b><span>strony</span></div><div><b>5</b><span>lekcji</span></div><div><b>PDF</b><span>zostaje u Ciebie</span></div></div>
       </div>
     </div>
   </section>
@@ -446,7 +484,7 @@ footer{background:#1a100c;color:#a8927f;padding-block:34px calc(110px + env(safe
     {t:'Pedicure hybrydowy', lvl:'Pedicure z kolorem', h:6, li:['Profesjonalny pedicure krok po kroku','Techniki do pracy u klientki albo w domu']}
   ];
   const MISTAKES = [['Niedokładnie opracowana skórka','Resztki naskórka przy wale sprawiają, że linia produktu nie wygląda czysto.'],['Pył po piłowaniu','Zostawiony przy skórkach albo pod wolnym brzegiem psuje efekt po nałożeniu koloru.'],['Produkt zalany na skórki','Nawet minimalne dotknięcie skóry bazą daje efekt rozlanego manicure.'],['Zbyt gruba warstwa','Gruby materiał przy skórkach zabiera stylizacji lekkość.'],['Brak oczyszczenia płytki','Tłuszcz i pozostałości produktu powodują nierówną aplikację.'],['Nieczysta linia przy skórkach','Liczą się milimetry. Równa linia decyduje o efekcie wow.'],['Źle dobrany kształt','Kształt niedopasowany do płytki sprawia, że nawet idealny kolor wygląda ciężko.']];
-  const FAQ = [['Ile kosztuje kurs?','Cenę podaję na konsultacji na Zoomie, po tym jak dobierzemy kurs do Twojego poziomu.'],['Czy muszę mieć doświadczenie?','Nie. Kurs manicure klasycznego zaczynamy od zera.'],['Czy dostanę certyfikat?','Tak, po kursie manicure klasycznego i hybrydowego.'],['Ile trwa kurs?','Od 4 do 8 godzin zajęć, zależnie od kursu.'],['Kiedy są terminy?','Terminy ustalam indywidualnie. Na konsultacji zaproponuję Ci najbliższy wolny dzień.'],['Gdzie odbywają się zajęcia?','W moim salonie przy ul. Wacława Balcerskiego 10, lok. 2 w Gdańsku Osowej.'],['Czy pedicure mogę zrobić tylko dla siebie?','Tak. Kurs pedicure jest też dla osób, które chcą dbać o stopy samodzielnie w domu.']];
+  const FAQ = [['Ile kosztuje kurs?','Cenę podaję na konsultacji na Zoomie, po tym jak dobierzemy kurs do Twojego poziomu.'],['Czy muszę mieć doświadczenie?','Nie. Kurs manicure klasycznego zaczynamy od zera.'],['Czy dostanę certyfikat?','Tak, po kursie manicure klasycznego i hybrydowego.'],['Czy dostanę materiały do nauki?','Tak. Na kursie manicure dostajesz moje materiały szkoleniowe w PDF: 54 strony, 5 lekcji, ilustracje, checklisty i mini test. Zostają u Ciebie po kursie.'],['Ile trwa kurs?','Od 4 do 8 godzin zajęć, zależnie od kursu.'],['Kiedy są terminy?','Terminy ustalam indywidualnie. Na konsultacji zaproponuję Ci najbliższy wolny dzień.'],['Gdzie odbywają się zajęcia?','W moim salonie przy ul. Wacława Balcerskiego 10, lok. 2 w Gdańsku Osowej.'],['Czy pedicure mogę zrobić tylko dla siebie?','Tak. Kurs pedicure jest też dla osób, które chcą dbać o stopy samodzielnie w domu.']];
 
   document.getElementById('courses').innerHTML = COURSES.map(c=>`
     <article class="course${c.feat?' feat':''} rv" data-rv>
@@ -478,6 +516,9 @@ footer{background:#1a100c;color:#a8927f;padding-block:34px calc(110px + env(safe
     document.querySelectorAll('[data-rv]').forEach((el,i)=>{ if(el.getBoundingClientRect().top>innerHeight){ el.classList.add('pre'); el.style.transitionDelay=((i%4)*90)+'ms'; io.observe(el); } });
   }
 })();
+</script>
+<script>
+(function(){const m=document.getElementById('matStack');if(!m)return;const bs=[...m.querySelectorAll('button')];bs.forEach(b=>b.addEventListener('click',()=>{const p=+b.dataset.pos;if(p===0){bs.forEach(x=>x.dataset.pos=(+x.dataset.pos+2)%3);return}bs.forEach(x=>{const q=+x.dataset.pos;x.dataset.pos=q===p?0:(q<p?q+1:q)})}))})();
 </script>
 </body>
 </html>
